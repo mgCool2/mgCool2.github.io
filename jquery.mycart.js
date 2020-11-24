@@ -13,7 +13,7 @@
 
     var _options = null;
     var DEFAULT_OPTIONS = {
-      currencySymbol: '$',
+      currencySymbol: 'Rs.',
       classCartIcon: 'my-cart-icon',
       classCartBadge: 'my-cart-badge',
       classProductQuantity: 'my-product-quantity',
@@ -218,8 +218,10 @@
         '<div class="modal-dialog" role="document">' +
         '<div class="modal-content">' +
         '<div class="modal-header">' +
+        '<h4 class="modal-title" id="myModalLabel">' +
+        'My Cart <span>' +
+        '</span></h4>' +
         '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-        '<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</h4>' +
         '</div>' +
         '<div class="modal-body">' +
         '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' +
@@ -248,7 +250,7 @@
           '<td title="Unit Price" class="text-right">' + options.currencySymbol + MathHelper.getRoundedNumber(this.price) + '</td>' +
           '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' +
           '<td title="Total" class="text-right ' + classProductTotal + '">' + options.currencySymbol + MathHelper.getRoundedNumber(total) + '</td>' +
-          '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '">X</a></td>' +
+          '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-sm btn-outline-danger ' + classProductRemove + '">Remove</a></td>' +
           '</tr>'
         );
       });
@@ -268,14 +270,14 @@
       var discountPrice = options.getDiscountPrice(products, ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
       if (products.length && discountPrice !== null) {
         $cartTable.append(
-          '<tr style="color: red">' +
-          '<td></td>' +
-          '<td><strong>Total (including discount)</strong></td>' +
-          '<td></td>' +
-          '<td></td>' +
-          '<td class="text-right"><strong id="' + idDiscountPrice + '"></strong></td>' +
-          '<td></td>' +
-          '</tr>'
+          // '<tr style="color: red">' +
+          // '<td></td>' +
+          // '<td><strong>Total (including discount)</strong></td>' +
+          // '<td></td>' +
+          // '<td></td>' +
+          // '<td class="text-right"><strong id="' + idDiscountPrice + '"></strong></td>' +
+          // '<td></td>' +
+          // '</tr>'
         );
       }
 
