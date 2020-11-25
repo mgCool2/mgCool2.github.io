@@ -1,61 +1,61 @@
 var section1 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
-  ["Item 3 Name", "Item 3 Description", 300],
-  ["Item 4 Name", "Item 4 Description", 400],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
+  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg"],
 ];
 var section2 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
-  ["Item 3 Name", "Item 3 Description", 300],
-  ["Item 4 Name", "Item 4 Description", 400],
-  ["Item 5 Name", "Item 5 Description", 500],
-  ["Item 6 Name", "Item 6 Description", 600],
-  ["Item 7 Name", "Item 7 Description", 700],
-  ["Item 8 Name", "Item 8 Description", 800],
-  ["Item 9 Name", "Item 9 Description", 900],
-  ["Item 10 Name", "Item 10 Description", 1000],
-  ["Item 11 Name", "Item 11 Description", 1100],
-  ["Item 12 Name", "Item 12 Description", 1200],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
+  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg"],
+  ["Item 5 Name", "Item 5 Description", 500, "./images/food.jpg"],
+  ["Item 6 Name", "Item 6 Description", 600, "./images/food.jpg"],
+  ["Item 7 Name", "Item 7 Description", 700, "./images/food.jpg"],
+  ["Item 8 Name", "Item 8 Description", 800, "./images/food.jpg"],
+  ["Item 9 Name", "Item 9 Description", 900, "./images/food.jpg"],
+  ["Item 10 Name", "Item 10 Description", 1000, "./images/food.jpg"],
+  ["Item 11 Name", "Item 11 Description", 1100, "./images/food.jpg"],
+  ["Item 12 Name", "Item 12 Description", 1200, "./images/food.jpg"],
 ];
 var section3 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
-  ["Item 3 Name", "Item 3 Description", 300],
-  ["Item 4 Name", "Item 4 Description", 400],
-  ["Item 5 Name", "Item 5 Description", 500],
-  ["Item 6 Name", "Item 6 Description", 600],
-  ["Item 7 Name", "Item 7 Description", 700],
-  ["Item 8 Name", "Item 8 Description", 800],
-  ["Item 9 Name", "Item 9 Description", 900],
-  ["Item 10 Name", "Item 10 Description", 1000],
-  ["Item 11 Name", "Item 11 Description", 1100],
-  ["Item 12 Name", "Item 12 Description", 1200],
-  ["Item 13 Name", "Item 13 Description", 1300],
-  ["Item 14 Name", "Item 14 Description", 1400],
-  ["Item 15 Name", "Item 15 Description", 1500],
-  ["Item 16 Name", "Item 16 Description", 1200],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
+  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg"],
+  ["Item 5 Name", "Item 5 Description", 500, "./images/food.jpg"],
+  ["Item 6 Name", "Item 6 Description", 600, "./images/food.jpg"],
+  ["Item 7 Name", "Item 7 Description", 700, "./images/food.jpg"],
+  ["Item 8 Name", "Item 8 Description", 800, "./images/food.jpg"],
+  ["Item 9 Name", "Item 9 Description", 900, "./images/food.jpg"],
+  ["Item 10 Name", "Item 10 Description", 1000, "./images/food.jpg"],
+  ["Item 11 Name", "Item 11 Description", 1100, "./images/food.jpg"],
+  ["Item 12 Name", "Item 12 Description", 1200, "./images/food.jpg"],
+  ["Item 13 Name", "Item 13 Description", 1300, "./images/food.jpg"],
+  ["Item 14 Name", "Item 14 Description", 1400, "./images/food.jpg"],
+  ["Item 15 Name", "Item 15 Description", 1500, "./images/food.jpg"],
+  ["Item 16 Name", "Item 16 Description", 1200, "./images/food.jpg"],
 ];
 var section4 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
-  ["Item 3 Name", "Item 3 Description", 300],
-  ["Item 4 Name", "Item 4 Description", 400],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
+  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg"],
 ];
 var section5 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
 ];
 var section6 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
-  ["Item 3 Name", "Item 3 Description", 300],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
 ];
 var section7 = [
-  ["Item 1 Name", "Item 1 Description", 100],
-  ["Item 2 Name", "Item 2 Description", 200],
-  ["Item 3 Name", "Item 3 Description", 300],
-  ["Item 4 Name", "Item 4 Description", 400],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
+  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg"],
 ];
 
 var sections = [
@@ -68,6 +68,8 @@ var sections = [
   [section7, "Section 7 Name"],
 ];
 
+var itemID = 1;
+
 for (var i = 0; i < sections.length; i++) {
   $(".placeholder").before(
     '<div class="my-3 p-3 bg-white rounded shadow-sm section' +
@@ -78,22 +80,30 @@ for (var i = 0; i < sections.length; i++) {
   );
   for (var j = 0; j < sections[i][0].length; j++) {
     $(".section" + i).append(
-      '<div class="media text-muted pt-3"><svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff" /><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg><div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray row"><div class="col-md-6"><div class="d-flex justify-content-between align-items-center w-100 item-name"><span class="text-gray-dark mr-auto">' +
+      '<div class="media text-muted pt-3"><img class="item-img" src="' +
+        sections[i][0][j][3] +
+        '">' +
+        '<div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray row">' +
+        '<div class="col-md-6">' +
+        '<div class="d-flex justify-content-between align-items-center w-100 item-name"><span class="text-gray-dark mr-auto">' +
         sections[i][0][j][0] +
         '</span></div><p class="item-details mr-auto">' +
         sections[i][0][j][1] +
-        '</p></div><div class="col-md-6"><button class="btn btn-sm btn-outline-dark view-cart-button my-cart-icon float-right">View cart</button><button class="btn btn-sm btn-success my-cart-btn float-right" data-id="' +
-        (i + j) +
+        '</p></div><div class="col-md-6"><button class="btn btn-sm btn-success my-cart-btn float-right" data-id="' +
+        itemID +
         '" data-name="' +
         sections[i][0][j][0] +
         '" data-summary="summary ' +
-        (i + j) +
+        itemID +
         '" data-price="' +
         sections[i][0][j][2] +
-        '" data-quantity="1" data-image="">Add to cart</button><span class="price float-right">Rs. ' +
+        '" data-quantity="1" data-image="' +
+        sections[i][0][j][3] +
+        '">Add to cart</button><span class="price float-right">Rs. ' +
         sections[i][0][j][2] +
         "/-</span></div></div></div>"
     );
+    itemID = itemID + 1;
   }
 }
 
@@ -106,7 +116,27 @@ $(function () {
 });
 
 $(function () {
-  var goToCartIcon = function ($addTocartBtn) {};
+  var goToCartIcon = function ($addTocartBtn) {
+    // var $cartIcon = $(".my-cart-icon");
+    // var $image = $(
+    //   '<img width="30px" height="30px" src="' +
+    //     $addTocartBtn.data("image") +
+    //     '"/>'
+    // ).css({ position: "fixed", "z-index": "999" });
+    // $addTocartBtn.prepend($image);
+    // var position = $cartIcon.position();
+    // $image.animate(
+    //   {
+    //     top: position.top,
+    //     left: position.left,
+    //   },
+    //   500,
+    //   "linear",
+    //   function () {
+    //     $image.remove();
+    //   }
+    // );
+  };
 
   $(".my-cart-btn").myCart({
     currencySymbol: "Rs.",

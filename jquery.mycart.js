@@ -5,7 +5,6 @@
  */
 
 (function ($) {
-
   "use strict";
 
   var OptionManager = (function () {
@@ -13,31 +12,35 @@
 
     var _options = null;
     var DEFAULT_OPTIONS = {
-      currencySymbol: 'Rs.',
-      classCartIcon: 'my-cart-icon',
-      classCartBadge: 'my-cart-badge',
-      classProductQuantity: 'my-product-quantity',
-      classProductRemove: 'my-product-remove',
-      classCheckoutCart: 'my-cart-checkout',
+      currencySymbol: "Rs.",
+      classCartIcon: "my-cart-icon",
+      classCartBadge: "my-cart-badge",
+      classProductQuantity: "my-product-quantity",
+      classProductRemove: "my-product-remove",
+      classCheckoutCart: "my-cart-checkout",
       affixCartIcon: true,
       showCheckoutModal: true,
       numberOfDecimals: 2,
       cartItems: null,
       clickOnAddToCart: function ($addTocart) {},
       afterAddOnCart: function (products, totalPrice, totalQuantity) {},
-      clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) {},
+      clickOnCartIcon: function (
+        $cartIcon,
+        products,
+        totalPrice,
+        totalQuantity
+      ) {},
       checkoutCart: function (products, totalPrice, totalQuantity) {
         return false;
       },
       getDiscountPrice: function (products, totalPrice, totalQuantity) {
         return null;
-      }
+      },
     };
-
 
     var loadOptions = function (customOptions) {
       _options = $.extend({}, DEFAULT_OPTIONS);
-      if (typeof customOptions === 'object') {
+      if (typeof customOptions === "object") {
         $.extend(_options, customOptions);
       }
     };
@@ -48,13 +51,13 @@
     objToReturn.loadOptions = loadOptions;
     objToReturn.getOptions = getOptions;
     return objToReturn;
-  }());
+  })();
 
   var MathHelper = (function () {
     var objToReturn = {};
     var getRoundedNumber = function (number) {
       if (isNaN(number)) {
-        throw new Error('Parameter is not a Number');
+        throw new Error("Parameter is not a Number");
       }
       number = number * 1;
       var options = OptionManager.getOptions();
@@ -62,7 +65,7 @@
     };
     objToReturn.getRoundedNumber = getRoundedNumber;
     return objToReturn;
-  }());
+  })();
 
   var ProductManager = (function () {
     var objToReturn = {};
@@ -93,7 +96,7 @@
         summary: summary,
         price: price,
         quantity: quantity,
-        image: image
+        image: image,
       });
       setAllProducts(products);
     };
@@ -115,7 +118,10 @@
         return false;
       }
       var products = getAllProducts();
-      products[productIndex].quantity = typeof quantity === "undefined" ? products[productIndex].quantity * 1 + 1 : quantity;
+      products[productIndex].quantity =
+        typeof quantity === "undefined"
+          ? products[productIndex].quantity * 1 + 1
+          : quantity;
       setAllProducts(products);
       return true;
     };
@@ -182,11 +188,9 @@
     objToReturn.getTotalQuantity = getTotalQuantity;
     objToReturn.getTotalPrice = getTotalPrice;
     return objToReturn;
-  }());
-
+  })();
 
   var loadMyCartEvent = function (targetSelector) {
-
     var options = OptionManager.getOptions();
     var $cartIcon = $("." + options.classCartIcon);
     var $cartBadge = $("." + options.classCartBadge);
@@ -194,45 +198,57 @@
     var classProductRemove = options.classProductRemove;
     var classCheckoutCart = options.classCheckoutCart;
 
-    var idCartModal = 'my-cart-modal';
-    var idCartTable = 'my-cart-table';
-    var idGrandTotal = 'my-cart-grand-total';
-    var idEmptyCartMessage = 'my-cart-empty-message';
-    var idDiscountPrice = 'my-cart-discount-price';
-    var classProductTotal = 'my-product-total';
-    var classAffixMyCartIcon = 'my-cart-icon-affix';
-
+    var idCartModal = "my-cart-modal";
+    var idCartTable = "my-cart-table";
+    var idGrandTotal = "my-cart-grand-total";
+    var idEmptyCartMessage = "my-cart-empty-message";
+    var idDiscountPrice = "my-cart-discount-price";
+    var classProductTotal = "my-product-total";
+    var classAffixMyCartIcon = "my-cart-icon-affix";
 
     if (options.cartItems && options.cartItems.constructor === Array) {
       ProductManager.clearProduct();
       $.each(options.cartItems, function () {
-        ProductManager.setProduct(this.id, this.name, this.summary, this.price, this.quantity, this.image);
+        ProductManager.setProduct(
+          this.id,
+          this.name,
+          this.summary,
+          this.price,
+          this.quantity,
+          this.image
+        );
       });
     }
 
     $cartBadge.text(ProductManager.getTotalQuantity());
 
     if (!$("#" + idCartModal).length) {
-      $('body').append(
-        '<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
-        '<div class="modal-dialog" role="document">' +
-        '<div class="modal-content">' +
-        '<div class="modal-header">' +
-        '<h4 class="modal-title" id="myModalLabel">' +
-        'My Cart <span>' +
-        '</span></h4>' +
-        '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-        '</div>' +
-        '<div class="modal-body">' +
-        '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' +
-        '</div>' +
-        '<div class="modal-footer">' +
-        '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>' +
-        '<button type="button" class="btn btn-primary ' + classCheckoutCart + '">Checkout</button>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      $("body").append(
+        '<div class="modal fade" id="' +
+          idCartModal +
+          '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
+          '<div class="modal-dialog" role="document">' +
+          '<div class="modal-content">' +
+          '<div class="modal-header">' +
+          '<h4 class="modal-title" id="myModalLabel">' +
+          "My Cart <span>" +
+          "</span></h4>" +
+          '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+          "</div>" +
+          '<div class="modal-body">' +
+          '<table class="table table-hover table-borderless outer-table" id="' +
+          idCartTable +
+          '"></table>' +
+          "</div>" +
+          '<div class="modal-footer">' +
+          '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>' +
+          '<button type="button" class="btn btn-primary ' +
+          classCheckoutCart +
+          '">Checkout</button>' +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>"
       );
     }
 
@@ -244,32 +260,79 @@
       $.each(products, function () {
         var total = this.quantity * this.price;
         $cartTable.append(
-          '<tr title="' + this.summary + '" data-id="' + this.id + '" data-price="' + this.price + '">' +
-          '<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="' + this.image + '"/></td>' +
-          '<td>' + this.name + '</td>' +
-          '<td title="Unit Price" class="text-right">' + options.currencySymbol + MathHelper.getRoundedNumber(this.price) + '</td>' +
-          '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' +
-          '<td title="Total" class="text-right ' + classProductTotal + '">' + options.currencySymbol + MathHelper.getRoundedNumber(total) + '</td>' +
-          '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-sm btn-outline-danger ' + classProductRemove + '">Remove</a></td>' +
-          '</tr>'
+          '<tr class="row" title="' +
+            this.summary +
+            '" data-id="' +
+            this.id +
+            '" data-price="' +
+            this.price +
+            '">' +
+            '<td class="text-center"><img width="30px" height="30px" src="' +
+            this.image +
+            '">' +
+            "</td>" +
+            "<td>" +
+            this.name +
+            "</td>" +
+            "</tr>" +
+            '<tr title="' +
+            this.summary +
+            '" data-id="' +
+            this.id +
+            '" data-price="' +
+            this.price +
+            '">' +
+            '<td class="text-left" title="Unit Price">' +
+            options.currencySymbol +
+            MathHelper.getRoundedNumber(this.price) +
+            "</td>" +
+            '<td title="Quantity"><input type="number" min="1" style="max-width: 70px;" class="' +
+            classProductQuantity +
+            '" value="' +
+            this.quantity +
+            '"></td>' +
+            "</tr>" +
+            '<tr style="border-bottom: 1px solid #bbb;" title="' +
+            this.summary +
+            '" data-id="' +
+            this.id +
+            '" data-price="' +
+            this.price +
+            '">' +
+            '<td title="Total" class="col-lg-2 col-md-2 col-sm-6 text-left ' +
+            classProductTotal +
+            '">' +
+            options.currencySymbol +
+            MathHelper.getRoundedNumber(total) +
+            "</div>" +
+            '<td title="Remove from Cart" class="col-lg-2 col-md-2 col-sm-6"><a href="javascript:void(0);" class="btn btn-sm btn-outline-danger ' +
+            classProductRemove +
+            '">Remove</a></td>' +
+            '</tr><hr style="border: 4px; max-width: 250px;">'
         );
       });
 
-      $cartTable.append(products.length ?
-        '<tr>' +
-        '<td></td>' +
-        '<td><strong>Total</strong></td>' +
-        '<td></td>' +
-        '<td></td>' +
-        '<td class="text-right"><strong id="' + idGrandTotal + '"></strong></td>' +
-        '<td></td>' +
-        '</tr>' :
-        '<div class="alert alert-danger" role="alert" id="' + idEmptyCartMessage + '">Your cart is empty</div>'
+      $cartTable.append(
+        products.length
+          ? '<br><table class="cart-footer"><tr>' +
+              '<td class="text-left"><strong>Total</strong></td>' +
+              '<td class="text-right"><strong id="' +
+              idGrandTotal +
+              '"></strong></td>' +
+              "</tr></table>"
+          : '<div class="alert alert-danger" role="alert" id="' +
+              idEmptyCartMessage +
+              '">Your cart is empty</div>'
       );
 
-      var discountPrice = options.getDiscountPrice(products, ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
+      var discountPrice = options.getDiscountPrice(
+        products,
+        ProductManager.getTotalPrice(),
+        ProductManager.getTotalQuantity()
+      );
       if (products.length && discountPrice !== null) {
-        $cartTable.append(
+        $cartTable
+          .append
           // '<tr style="color: red">' +
           // '<td></td>' +
           // '<td><strong>Total (including discount)</strong></td>' +
@@ -278,7 +341,7 @@
           // '<td class="text-right"><strong id="' + idDiscountPrice + '"></strong></td>' +
           // '<td></td>' +
           // '</tr>'
-        );
+          ();
       }
 
       showGrandTotal();
@@ -286,7 +349,7 @@
     };
     var showModal = function () {
       drawTable();
-      $("#" + idCartModal).modal('show');
+      $("#" + idCartModal).modal("show");
     };
     var updateCart = function () {
       $.each($("." + classProductQuantity), function () {
@@ -295,25 +358,47 @@
       });
     };
     var showGrandTotal = function () {
-      $("#" + idGrandTotal).text(options.currencySymbol + MathHelper.getRoundedNumber(ProductManager.getTotalPrice()));
+      $("#" + idGrandTotal).text(
+        options.currencySymbol +
+          MathHelper.getRoundedNumber(ProductManager.getTotalPrice())
+      );
     };
     var showDiscountPrice = function () {
-      $("#" + idDiscountPrice).text(options.currencySymbol + MathHelper.getRoundedNumber(options.getDiscountPrice(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity())));
+      $("#" + idDiscountPrice).text(
+        options.currencySymbol +
+          MathHelper.getRoundedNumber(
+            options.getDiscountPrice(
+              ProductManager.getAllProducts(),
+              ProductManager.getTotalPrice(),
+              ProductManager.getTotalQuantity()
+            )
+          )
+      );
     };
 
     /*
     EVENT
     */
     if (options.affixCartIcon) {
-      var cartIconBottom = $cartIcon.offset().top * 1 + $cartIcon.css("height").match(/\d+/) * 1;
-      var cartIconPosition = $cartIcon.css('position');
+      var cartIconBottom =
+        $cartIcon.offset().top * 1 + $cartIcon.css("height").match(/\d+/) * 1;
+      var cartIconPosition = $cartIcon.css("position");
       $(window).scroll(function () {
-        $(window).scrollTop() >= cartIconBottom ? $cartIcon.addClass(classAffixMyCartIcon) : $cartIcon.removeClass(classAffixMyCartIcon);
+        $(window).scrollTop() >= cartIconBottom
+          ? $cartIcon.addClass(classAffixMyCartIcon)
+          : $cartIcon.removeClass(classAffixMyCartIcon);
       });
     }
 
     $cartIcon.click(function () {
-      options.showCheckoutModal ? showModal() : options.clickOnCartIcon($cartIcon, ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
+      options.showCheckoutModal
+        ? showModal()
+        : options.clickOnCartIcon(
+            $cartIcon,
+            ProductManager.getAllProducts(),
+            ProductManager.getTotalPrice(),
+            ProductManager.getTotalQuantity()
+          );
     });
 
     $(document).on("input", "." + classProductQuantity, function () {
@@ -321,7 +406,12 @@
       var id = $(this).closest("tr").data("id");
       var quantity = $(this).val();
 
-      $(this).parent("td").next("." + classProductTotal).text(options.currencySymbol + MathHelper.getRoundedNumber(price * quantity));
+      $(this)
+        .parent("td")
+        .next("." + classProductTotal)
+        .text(
+          options.currencySymbol + MathHelper.getRoundedNumber(price * quantity)
+        );
       ProductManager.updatePoduct(id, quantity);
 
       $cartBadge.text(ProductManager.getTotalQuantity());
@@ -329,14 +419,14 @@
       showDiscountPrice();
     });
 
-    $(document).on('keypress', "." + classProductQuantity, function (evt) {
+    $(document).on("keypress", "." + classProductQuantity, function (evt) {
       if (evt.keyCode == 38 || evt.keyCode == 40) {
         return;
       }
       evt.preventDefault();
     });
 
-    $(document).on('click', "." + classProductRemove, function () {
+    $(document).on("click", "." + classProductRemove, function () {
       var $tr = $(this).closest("tr");
       var id = $tr.data("id");
       $tr.hide(500, function () {
@@ -346,14 +436,20 @@
       });
     });
 
-    $(document).on('click', "." + classCheckoutCart, function () {
+    $(document).on("click", "." + classCheckoutCart, function () {
       var products = ProductManager.getAllProducts();
       if (!products.length) {
-        $("#" + idEmptyCartMessage).fadeTo('fast', 0.5).fadeTo('fast', 1.0);
+        $("#" + idEmptyCartMessage)
+          .fadeTo("fast", 0.5)
+          .fadeTo("fast", 1.0);
         return;
       }
       updateCart();
-      var isCheckedOut = options.checkoutCart(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
+      var isCheckedOut = options.checkoutCart(
+        ProductManager.getAllProducts(),
+        ProductManager.getTotalPrice(),
+        ProductManager.getTotalQuantity()
+      );
       if (isCheckedOut !== false) {
         ProductManager.clearProduct();
         $cartBadge.text(ProductManager.getTotalQuantity());
@@ -361,31 +457,31 @@
       }
     });
 
-    $(document).on('click', targetSelector, function () {
+    $(document).on("click", targetSelector, function () {
       var $target = $(this);
       options.clickOnAddToCart($target);
 
-      var id = $target.data('id');
-      var name = $target.data('name');
-      var summary = $target.data('summary');
-      var price = $target.data('price');
-      var quantity = $target.data('quantity');
-      var image = $target.data('image');
+      var id = $target.data("id");
+      var name = $target.data("name");
+      var summary = $target.data("summary");
+      var price = $target.data("price");
+      var quantity = $target.data("quantity");
+      var image = $target.data("image");
 
       ProductManager.setProduct(id, name, summary, price, quantity, image);
       $cartBadge.text(ProductManager.getTotalQuantity());
 
-      options.afterAddOnCart(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity());
+      options.afterAddOnCart(
+        ProductManager.getAllProducts(),
+        ProductManager.getTotalPrice(),
+        ProductManager.getTotalQuantity()
+      );
     });
-
   };
-
 
   $.fn.myCart = function (userOptions) {
     OptionManager.loadOptions(userOptions);
     loadMyCartEvent(this.selector);
     return this;
   };
-
-
 })(jQuery);
