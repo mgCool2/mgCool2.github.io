@@ -1,3 +1,6 @@
+var cartOptions;
+var cartProducts;
+
 var section1 = [
   ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
   ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
@@ -142,7 +145,7 @@ $(function () {
     );
   };
 
-  $(".my-cart-btn").myCart({
+  cartOptions = {
     currencySymbol: "Rs.",
     classCartIcon: "my-cart-icon",
     classCartBadge: "my-cart-badge",
@@ -158,6 +161,7 @@ $(function () {
     },
     afterAddOnCart: function (products, totalPrice, totalQuantity) {
       console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+      cartProducts = products;
     },
     clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) {
       console.log(
@@ -196,7 +200,9 @@ $(function () {
       console.log("calculating discount", products, totalPrice, totalQuantity);
       return totalPrice - totalPrice * discount;
     },
-  });
+  };
+
+  $(".my-cart-btn").myCart(cartOptions);
 
   $("#addNewProduct").click(function (event) {
     var currentElementNo = $(".row").children().length + 1;
