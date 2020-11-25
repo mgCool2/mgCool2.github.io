@@ -8,6 +8,10 @@
   margin: 0.25rem 0.25rem 0 0;
 }
 
+#my-cart-table {
+  margin: 0 auto;
+}
+
 /* CUSTOMIZE: To style the item name */
 .item-name {
   font-weight: bold;

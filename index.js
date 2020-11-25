@@ -68,44 +68,48 @@ var sections = [
   [section7, "Section 7 Name"],
 ];
 
-var itemID = 1;
+function displayMenuItems() {
+  var itemID = 1;
 
-for (var i = 0; i < sections.length; i++) {
-  $(".placeholder").before(
-    '<div class="my-3 p-3 bg-white rounded shadow-sm section' +
-      i +
-      '"><h6 class="border-bottom border-gray pb-2 mb-0">' +
-      sections[i][1] +
-      "</h6></div>"
-  );
-  for (var j = 0; j < sections[i][0].length; j++) {
-    $(".section" + i).append(
-      '<div class="media text-muted pt-3"><img class="item-img" src="' +
-        sections[i][0][j][3] +
-        '">' +
-        '<div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray row">' +
-        '<div class="col-md-6">' +
-        '<div class="d-flex justify-content-between align-items-center w-100 item-name"><span class="text-gray-dark mr-auto">' +
-        sections[i][0][j][0] +
-        '</span></div><p class="item-details mr-auto">' +
-        sections[i][0][j][1] +
-        '</p></div><div class="col-md-6"><button class="btn btn-sm btn-success my-cart-btn float-right" data-id="' +
-        itemID +
-        '" data-name="' +
-        sections[i][0][j][0] +
-        '" data-summary="summary ' +
-        itemID +
-        '" data-price="' +
-        sections[i][0][j][2] +
-        '" data-quantity="1" data-image="' +
-        sections[i][0][j][3] +
-        '">Add to cart</button><span class="price float-right">Rs. ' +
-        sections[i][0][j][2] +
-        "/-</span></div></div></div>"
+  for (var i = 0; i < sections.length; i++) {
+    $(".placeholder").before(
+      '<div class="my-3 p-3 bg-white rounded shadow-sm section' +
+        i +
+        '"><h6 class="border-bottom border-gray pb-2 mb-0">' +
+        sections[i][1] +
+        "</h6></div>"
     );
-    itemID = itemID + 1;
+    for (var j = 0; j < sections[i][0].length; j++) {
+      $(".section" + i).append(
+        '<div class="media text-muted pt-3"><img class="item-img" src="' +
+          sections[i][0][j][3] +
+          '">' +
+          '<div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray row">' +
+          '<div class="col-md-6">' +
+          '<div class="d-flex justify-content-between align-items-center w-100 item-name"><span class="text-gray-dark mr-auto">' +
+          sections[i][0][j][0] +
+          '</span></div><p class="item-details mr-auto">' +
+          sections[i][0][j][1] +
+          '</p></div><div class="col-md-6"><button class="btn btn-sm btn-success my-cart-btn float-right" data-id="' +
+          itemID +
+          '" data-name="' +
+          sections[i][0][j][0] +
+          '" data-summary="summary ' +
+          itemID +
+          '" data-price="' +
+          sections[i][0][j][2] +
+          '" data-quantity="1" data-image="' +
+          sections[i][0][j][3] +
+          '">Add to cart</button><span class="price float-right">Rs. ' +
+          sections[i][0][j][2] +
+          "/-</span></div></div></div>"
+      );
+      itemID = itemID + 1;
+    }
   }
 }
+
+displayMenuItems();
 
 $(function () {
   "use strict";
@@ -117,25 +121,25 @@ $(function () {
 
 $(function () {
   var goToCartIcon = function ($addTocartBtn) {
-    // var $cartIcon = $(".my-cart-icon");
-    // var $image = $(
-    //   '<img width="30px" height="30px" src="' +
-    //     $addTocartBtn.data("image") +
-    //     '"/>'
-    // ).css({ position: "fixed", "z-index": "999" });
-    // $addTocartBtn.prepend($image);
-    // var position = $cartIcon.position();
-    // $image.animate(
-    //   {
-    //     top: position.top,
-    //     left: position.left,
-    //   },
-    //   500,
-    //   "linear",
-    //   function () {
-    //     $image.remove();
-    //   }
-    // );
+    var $cartIcon = $(".my-cart-icon");
+    var $image = $(
+      '<img width="30px" height="30px" src="' +
+        $addTocartBtn.data("image") +
+        '"/>'
+    ).css({ position: "fixed", "z-index": "999" });
+    $addTocartBtn.prepend($image);
+    var position = $cartIcon.position();
+    $image.animate(
+      {
+        top: position.top,
+        left: position.left,
+      },
+      500,
+      "linear",
+      function () {
+        $image.remove();
+      }
+    );
   };
 
   $(".my-cart-btn").myCart({
