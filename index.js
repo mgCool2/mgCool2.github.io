@@ -1,5 +1,6 @@
 var cartOptions;
 var cartProducts;
+var itemID;
 
 var section1 = [
   ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
@@ -62,25 +63,29 @@ var section7 = [
 ];
 
 var sections = [
-  [section1, "Section 1 Name"],
-  [section2, "Section 2 Name"],
-  [section3, "Section 3 Name"],
-  [section4, "Section 4 Name"],
-  [section5, "Section 5 Name"],
-  [section6, "Section 6 Name"],
-  [section7, "Section 7 Name"],
+  [section1, "Section 1 Name", "Section Description", "Section1ID"],
+  [section2, "Section 2 Name", "Section Description", "Section2ID"],
+  [section3, "Section 3 Name", "Section Description", "Section3ID"],
+  [section4, "Section 4 Name", "Section Description", "Section4ID"],
+  [section5, "Section 5 Name", "Section Description", "Section5ID"],
+  [section6, "Section 6 Name", "Section Description", "Section6ID"],
+  [section7, "Section 7 Name", "Section Description", "Section7ID"],
 ];
 
 function displayMenuItems() {
-  var itemID = 1;
+  itemID = 1;
 
   for (var i = 0; i < sections.length; i++) {
     $(".placeholder").before(
-      '<div class="my-3 p-3 bg-white rounded shadow-sm section' +
+      "<section " +
+        '" id="' +
+        sections[i][3] +
+        '">' +
+        '<div class="my-3 p-3 bg-white rounded shadow-sm section' +
         i +
         '"><h6 class="border-bottom border-gray pb-2 mb-0">' +
         sections[i][1] +
-        "</h6></div>"
+        "</h6></div></section>"
     );
     for (var j = 0; j < sections[i][0].length; j++) {
       $(".section" + i).append(
@@ -114,6 +119,8 @@ function displayMenuItems() {
 
 displayMenuItems();
 
+function incrementItemQuantity() {}
+
 $(function () {
   "use strict";
 
@@ -123,27 +130,7 @@ $(function () {
 });
 
 $(function () {
-  var goToCartIcon = function ($addTocartBtn) {
-    var $cartIcon = $(".my-cart-icon");
-    var $image = $(
-      '<img width="30px" height="30px" src="' +
-        $addTocartBtn.data("image") +
-        '"/>'
-    ).css({ position: "fixed", "z-index": "999" });
-    $addTocartBtn.prepend($image);
-    var position = $cartIcon.position();
-    $image.animate(
-      {
-        top: position.top,
-        left: position.left,
-      },
-      500,
-      "linear",
-      function () {
-        $image.remove();
-      }
-    );
-  };
+  var goToCartIcon = function ($addTocartBtn) {};
 
   cartOptions = {
     currencySymbol: "Rs.",

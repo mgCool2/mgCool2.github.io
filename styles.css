@@ -9,7 +9,7 @@
 }
 
 #my-cart-table {
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* CUSTOMIZE: To style the item name */
@@ -45,6 +45,7 @@
   margin: 0 auto;
   text-align: center;
   padding: 1rem;
+  min-width: 17.75rem;
   max-width: 31.25rem;
 }
 
@@ -61,5 +62,13 @@
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-img {
+    width: 64px;
+    height: 64px;
+    margin: 0.25rem 0.25rem 0 0;
   }
 }

@@ -260,18 +260,18 @@
       $.each(products, function () {
         var total = this.quantity * this.price;
         $cartTable.append(
-          '<tr class="row" title="' +
+          '<tr title="' +
             this.summary +
             '" data-id="' +
             this.id +
             '" data-price="' +
             this.price +
             '">' +
-            '<td class="text-center"><img width="30px" height="30px" src="' +
+            '<td class="text-left"><img width="64px" height="64px" src="' +
             this.image +
             '">' +
             "</td>" +
-            "<td>" +
+            "<td class='text-left' style='min-width:140px;'>" +
             this.name +
             "</td>" +
             "</tr>" +
@@ -286,11 +286,14 @@
             options.currencySymbol +
             MathHelper.getRoundedNumber(this.price) +
             "</td>" +
-            '<td title="Quantity"><input type="number" min="1" style="max-width: 70px;" class="' +
-            classProductQuantity +
-            '" value="' +
+            "<td title='Quantity'><button class='btn btn-sm btn-outline-dark button minusButton' style='z-index=-10' id='minus-button-" +
+            this.id +
+            "'>-</button><span class='button'> " +
             this.quantity +
-            '"></td>' +
+            " </span><button class='btn btn-sm btn-outline-dark button plusButton' style='z-index=-10' id='plus-button-" +
+            this.id +
+            "'>+</button>" +
+            "</td>" +
             "</tr>" +
             '<tr style="border-bottom: 1px solid #bbb;" title="' +
             this.summary +
@@ -314,12 +317,12 @@
 
       $cartTable.append(
         products.length
-          ? '<br><table class="cart-footer"><tr>' +
+          ? "<tr>" +
               '<td class="text-left"><strong>Total</strong></td>' +
               '<td class="text-right"><strong id="' +
               idGrandTotal +
               '"></strong></td>' +
-              "</tr></table>"
+              "</tr>"
           : '<div class="alert alert-danger" role="alert" id="' +
               idEmptyCartMessage +
               '">Your cart is empty</div>'
