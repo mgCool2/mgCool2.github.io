@@ -76,6 +76,16 @@ function displayMenuItems() {
   itemID = 1;
 
   for (var i = 0; i < sections.length; i++) {
+    $(".nav-underline").append(
+      '<a class="nav-link" href="#' +
+        sections[i][3] +
+        '">' +
+        sections[i][1] +
+        "</a>"
+    );
+  }
+
+  for (var i = 0; i < sections.length; i++) {
     $(".placeholder").before(
       "<section " +
         '" id="' +
