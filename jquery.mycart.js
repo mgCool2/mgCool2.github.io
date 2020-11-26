@@ -369,7 +369,7 @@
           id = $(this).closest("tr").data("id");
           for (var i = 0; i < cartProducts.length; i++) {
             if (id == cartProducts[i].id) {
-              cartProducts[i].quantity += 1;
+              cartProducts[i].quantity++;
               console.log(cartProducts[i].quantity);
               $("#quantity" + id).text(cartProducts[i].quantity);
               $("#my-product-total" + id).text(
@@ -386,16 +386,17 @@
           console.log(quantity);
           for (var i = 0; i < cartProducts.length; i++) {
             if (id == cartProducts[i].id) {
-              cartProducts[i].quantity -= 1;
+              cartProducts[i].quantity--;
               console.log(cartProducts[i].quantity);
               $("#quantity" + id).text(" " + cartProducts[i].quantity + " ");
               $("#my-product-total" + id).text(
                 "Rs. " + cartProducts[i].quantity * cartProducts[i].price
               );
+              if (cartProducts[i].quantity == 1) {
+                $(this).addClass(classProductRemove);
+              }
               if (cartProducts[i].quantity === 0) {
-                ProductManager.removeProduct(id);
-                drawTable();
-                $cartBadge.text(ProductManager.getTotalQuantity());
+                location.reload();
               }
             }
           }
