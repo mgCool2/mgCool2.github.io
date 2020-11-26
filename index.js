@@ -133,7 +133,7 @@ $(function () {
   var goToCartIcon = function ($addTocartBtn) {};
 
   cartOptions = {
-    currencySymbol: "Rs.",
+    currencySymbol: "Rs. ",
     classCartIcon: "my-cart-icon",
     classCartBadge: "my-cart-badge",
     classProductQuantity: "my-product-quantity",

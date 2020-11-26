@@ -286,11 +286,16 @@
             options.currencySymbol +
             MathHelper.getRoundedNumber(this.price) +
             "</td>" +
-            "<td title='Quantity'><button class='btn btn-sm btn-outline-dark button minusButton' style='z-index=-10' id='minus-button-" +
+            "<td title='Quantity'><button class='btn btn-sm btn-outline-dark button minusButton " +
+            "' style='z-index=-10' id='minus-button-" +
             this.id +
-            "'>-</button><span class='button'> " +
+            "'>-</button> <span data-id='" +
+            this.id +
+            "' id='quantity" +
+            this.id +
+            "'>" +
             this.quantity +
-            " </span><button class='btn btn-sm btn-outline-dark button plusButton' style='z-index=-10' id='plus-button-" +
+            "</span> <button class='btn btn-sm btn-outline-dark button plusButton' style='z-index=-10' id='plus-button-" +
             this.id +
             "'>+</button>" +
             "</td>" +
@@ -304,6 +309,9 @@
             '">' +
             '<td title="Total" class="col-lg-2 col-md-2 col-sm-6 text-left ' +
             classProductTotal +
+            '" id="' +
+            classProductTotal +
+            this.id +
             '">' +
             options.currencySymbol +
             MathHelper.getRoundedNumber(total) +
@@ -353,6 +361,47 @@
     var showModal = function () {
       drawTable();
       $("#" + idCartModal).modal("show");
+      addButtonEventListener();
+
+      function addButtonEventListener() {
+        var id;
+        $(document).on("click", ".plusButton", function () {
+          id = $(this).closest("tr").data("id");
+          for (var i = 0; i < cartProducts.length; i++) {
+            if (id == cartProducts[i].id) {
+              cartProducts[i].quantity += 1;
+              console.log(cartProducts[i].quantity);
+              $("#quantity" + id).text(cartProducts[i].quantity);
+              $("#my-product-total" + id).text(
+                "Rs. " + cartProducts[i].quantity * cartProducts[i].price
+              );
+            }
+          }
+
+          updateCart();
+        });
+        $(document).on("click", ".minusButton", function () {
+          id = $(this).closest("tr").data("id");
+          var quantity = $(this).closest("span").data("id");
+          console.log(quantity);
+          for (var i = 0; i < cartProducts.length; i++) {
+            if (id == cartProducts[i].id) {
+              cartProducts[i].quantity -= 1;
+              console.log(cartProducts[i].quantity);
+              $("#quantity" + id).text(" " + cartProducts[i].quantity + " ");
+              $("#my-product-total" + id).text(
+                "Rs. " + cartProducts[i].quantity * cartProducts[i].price
+              );
+              if (cartProducts[i].quantity === 0) {
+                ProductManager.removeProduct(id);
+                drawTable();
+                $cartBadge.text(ProductManager.getTotalQuantity());
+              }
+            }
+          }
+          updateCart();
+        });
+      }
     };
     var updateCart = function () {
       $.each($("." + classProductQuantity), function () {
