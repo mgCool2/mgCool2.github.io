@@ -17,6 +17,10 @@
   margin: 0 0 0 0.125rem;
 }
 
+.my-cart-btn {
+  margin-left: 1rem;
+}
+
 /* CUSTOMIZE: To style the item name */
 .item-name {
   font-weight: bold;
@@ -24,12 +28,12 @@
 
 /* CUSTOMIZE: To style the item description */
 .item-details {
-  margin: 0;
+  margin: 0 0 0.2rem 0;
 }
 
 /* CUSTOMIZE: To style the price displayed in the menu */
 .price {
-  margin: 0.5rem 1rem 0 0;
+  margin: 0.5rem 0 0 0;
   font-weight: bold;
 }
 

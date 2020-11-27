@@ -4,48 +4,48 @@ var totalCost; // To store the total cost of the items.
 var numberOfCartItems; // To store the number of items in the cart.
 
 var section1 = [
-  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg"],
-  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg"],
-  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg"],
-  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg"],
+  ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg", 1],
+  ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg", 2],
+  ["Item 3 Name", "Item 3 Description", 300, "./images/food.jpg", 3],
+  ["Item 4 Name", "Item 4 Description", 400, "./images/food.jpg", 4],
 ];
 var section2 = [
-  ["Item 5 Name", "Item 1 Description", 100, "./images/food.jpg"],
-  ["Item 6 Name", "Item 2 Description", 200, "./images/food.jpg"],
-  ["Item 7 Name", "Item 3 Description", 300, "./images/food.jpg"],
-  ["Item 8 Name", "Item 4 Description", 400, "./images/food.jpg"],
-  ["Item 9 Name", "Item 5 Description", 500, "./images/food.jpg"],
-  ["Item 10 Name", "Item 6 Description", 600, "./images/food.jpg"],
-  ["Item 11 Name", "Item 7 Description", 700, "./images/food.jpg"],
-  ["Item 12 Name", "Item 8 Description", 800, "./images/food.jpg"],
-  ["Item 13 Name", "Item 9 Description", 900, "./images/food.jpg"],
-  ["Item 14 Name", "Item 10 Description", 1000, "./images/food.jpg"],
-  ["Item 15 Name", "Item 11 Description", 1100, "./images/food.jpg"],
-  ["Item 16 Name", "Item 12 Description", 1200, "./images/food.jpg"],
+  ["Item 5 Name", "Item 1 Description", 100, "./images/food.jpg", 5],
+  ["Item 6 Name", "Item 2 Description", 200, "./images/food.jpg", 6],
+  ["Item 7 Name", "Item 3 Description", 300, "./images/food.jpg", 7],
+  ["Item 8 Name", "Item 4 Description", 400, "./images/food.jpg", 8],
+  ["Item 9 Name", "Item 5 Description", 500, "./images/food.jpg", 9],
+  ["Item 10 Name", "Item 6 Description", 600, "./images/food.jpg", 10],
+  ["Item 11 Name", "Item 7 Description", 700, "./images/food.jpg", 11],
+  ["Item 12 Name", "Item 8 Description", 800, "./images/food.jpg", 12],
+  ["Item 13 Name", "Item 9 Description", 900, "./images/food.jpg", 13],
+  ["Item 14 Name", "Item 10 Description", 1000, "./images/food.jpg", 14],
+  ["Item 15 Name", "Item 11 Description", 1100, "./images/food.jpg", 15],
+  ["Item 16 Name", "Item 12 Description", 1200, "./images/food.jpg", 16],
 ];
 var section3 = [
-  ["Item 17 Name", "Item 17 Description", 100, "./images/food.jpg"],
-  ["Item 18 Name", "Item 18 Description", 200, "./images/food.jpg"],
-  ["Item 19 Name", "Item 19 Description", 300, "./images/food.jpg"],
-  ["Item 20 Name", "Item 20 Description", 400, "./images/food.jpg"],
-  ["Item 21 Name", "Item 21 Description", 500, "./images/food.jpg"],
-  ["Item 22 Name", "Item 22 Description", 600, "./images/food.jpg"],
-  ["Item 23 Name", "Item 23 Description", 700, "./images/food.jpg"],
-  ["Item 24 Name", "Item 24 Description", 800, "./images/food.jpg"],
-  ["Item 25 Name", "Item 25 Description", 900, "./images/food.jpg"],
-  ["Item 26 Name", "Item 26 Description", 1000, "./images/food.jpg"],
-  ["Item 27 Name", "Item 27 Description", 1100, "./images/food.jpg"],
-  ["Item 28 Name", "Item 28 Description", 1200, "./images/food.jpg"],
-  ["Item 29 Name", "Item 29 Description", 1300, "./images/food.jpg"],
-  ["Item 30 Name", "Item 30 Description", 1400, "./images/food.jpg"],
-  ["Item 31 Name", "Item 31 Description", 1500, "./images/food.jpg"],
-  ["Item 32 Name", "Item 32 Description", 1200, "./images/food.jpg"],
+  ["Item 17 Name", "Item 17 Description", 100, "./images/food.jpg", 17],
+  ["Item 18 Name", "Item 18 Description", 200, "./images/food.jpg", 18],
+  ["Item 19 Name", "Item 19 Description", 300, "./images/food.jpg", 19],
+  ["Item 20 Name", "Item 20 Description", 400, "./images/food.jpg", 20],
+  ["Item 21 Name", "Item 21 Description", 500, "./images/food.jpg", 21],
+  ["Item 22 Name", "Item 22 Description", 600, "./images/food.jpg", 22],
+  ["Item 23 Name", "Item 23 Description", 700, "./images/food.jpg", 23],
+  ["Item 24 Name", "Item 24 Description", 800, "./images/food.jpg", 24],
+  ["Item 25 Name", "Item 25 Description", 900, "./images/food.jpg", 25],
+  ["Item 26 Name", "Item 26 Description", 1000, "./images/food.jpg", 26],
+  ["Item 27 Name", "Item 27 Description", 1100, "./images/food.jpg", 27],
+  ["Item 28 Name", "Item 28 Description", 1200, "./images/food.jpg", 28],
+  ["Item 29 Name", "Item 29 Description", 1300, "./images/food.jpg", 30],
+  ["Item 30 Name", "Item 30 Description", 1400, "./images/food.jpg", 31],
+  ["Item 31 Name", "Item 31 Description", 1500, "./images/food.jpg", 32],
+  ["Item 32 Name", "Item 32 Description", 1200, "./images/food.jpg", 33],
 ];
 var section4 = [
-  ["Item 33 Name", "Item 33 Description", 100, "./images/food.jpg"],
-  ["Item 34 Name", "Item 34 Description", 200, "./images/food.jpg"],
-  ["Item 35 Name", "Item 35 Description", 300, "./images/food.jpg"],
-  ["Item 36 Name", "Item 36 Description", 400, "./images/food.jpg"],
+  ["Item 33 Name", "Item 33 Description", 100, "./images/food.jpg", 34],
+  ["Item 34 Name", "Item 34 Description", 200, "./images/food.jpg", 35],
+  ["Item 35 Name", "Item 35 Description", 300, "./images/food.jpg", 36],
+  ["Item 36 Name", "Item 36 Description", 400, "./images/food.jpg", 37],
 ];
 
 var sections = [
@@ -93,18 +93,14 @@ function displayMenuItems() {
           '</span></div><p class="item-details mr-auto">' +
           sections[i][0][j][1] +
           '</p></div><div class="col-md-6">' +
-          '<button class="btn btn-sm btn-outline-danger float-right page-remove-button remove-button-' +
+          '<button class="btn btn-sm btn-outline-danger float-right page-remove-button remove-button page-remove-button-' +
+          sections[i][0][j][4] +
           '">Remove</button>' +
           '<button class="btn btn-sm btn-success my-cart-btn float-right" data-id="' +
-          itemID +
+          sections[i][0][j][4] +
           '" data-name="' +
           sections[i][0][j][0] +
-          '" data-summary="summary ' +
-          itemID +
           '" data-price="' +
-          sections[i][0][j][2] +
-          '" data-quantity="1" data-image="' +
-          sections[i][0][j][3] +
           '">Add to cart</button><span class="price float-right">Rs. ' +
           sections[i][0][j][2] +
           "/-</span></div></div></div>"
@@ -126,12 +122,17 @@ function onClickingMyCart() {
 function addToCart() {
   var itemName = $(this).data("name");
   var itemInfo;
+
+  var id = $(this).data("id");
+  var positionInCart;
+
   var alreadyInCart = false;
   for (var i = 0; i < cart.length; i++) {
     if (itemName == cart[i][0]) {
       alreadyInCart = true;
       cart[i][2] += 1;
       console.log("Added 1 item to cart: ");
+      positionInCart = i;
     }
   }
   if (alreadyInCart == false) {
@@ -143,11 +144,25 @@ function addToCart() {
           var quantity = 1;
           var imageFilePath = sections[i][0][j][3];
           itemInfo = [name, price, quantity, imageFilePath];
+
+          positionInCart = cart.length;
         }
     }
     cart.push(itemInfo);
   }
+
   updateCartDetails();
+
+  showMenuRemoveButton(id, positionInCart);
+}
+
+function showMenuRemoveButton(id, positionInCart) {
+  $(".page-remove-button-" + id).show();
+}
+
+function removeFromCartByMenu() {
+  $(this).hide();
+  $(".my-cart-btn").hide().show();
 }
 
 // Updates the total number of items and total cost. Called by addToCart()
@@ -194,7 +209,7 @@ function displayCartItems() {
           '">' +
           '<td class="text-left" title="Unit Price">Rs. ' +
           cart[i][1] +
-          "  for </td>" +
+          "</td>" +
           "<td title='Quantity'><button class='btn btn-sm btn-outline-dark button minusButton " +
           "' style='z-index=-10' id='minus-button-" +
           i +
@@ -221,7 +236,7 @@ function displayCartItems() {
           i +
           '" id=itemTotalCost"' +
           i +
-          '"><strong>Rs. ' +
+          '"><strong>= Rs. ' +
           cart[i][1] * cart[i][2] +
           "</strong></div>" +
           '<td title="Remove from Cart" class="col-lg-2 col-md-2 col-sm-6" data-id="' +
@@ -235,7 +250,7 @@ function displayCartItems() {
     $("#my-cart-table").append(
       "<tr>" +
         '<td class="text-left"><strong>Total</strong></td>' +
-        '<td class="text-right"><strong>Rs. ' +
+        '<td class="text-right"><strong>= Rs. ' +
         totalCost +
         "</strong></td>" +
         "</tr>"
@@ -281,7 +296,11 @@ function decrementCartItem() {
 // To finalize the order and checkout
 function checkout() {
   if (cart.length === 0 || myCart.length == null) {
-    alert("There is nothing in your cart!");
+    $("#my-cart-empty-message")
+      .fadeOut(120)
+      .fadeIn(120)
+      .fadeOut(120)
+      .fadeIn(120);
   } else {
     alert(cart);
   }
@@ -304,6 +323,8 @@ $(".cart-container").hide(); // Hiding the cart container till the button is pre
 $(".my-cart-icon").click(onClickingMyCart); // Calling the function to respond to the cart icon click
 
 $(".my-cart-btn").click(addToCart); // Calling the function to respond to the add to cart click.
+
+$(".page-remove-button").click(removeFromCartByMenu); // Calling the function to hide the menu remove button
 
 $(".remove-button").click(removeFromCart); // Calling the function to respond to the remove from cart click.
 
