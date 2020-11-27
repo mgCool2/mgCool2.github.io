@@ -143,7 +143,7 @@ function addToCart() {
           var price = sections[i][0][j][2];
           var quantity = 1;
           var imageFilePath = sections[i][0][j][3];
-          itemInfo = [name, price, quantity, imageFilePath];
+          itemInfo = [name, price, quantity, imageFilePath, id];
 
           positionInCart = cart.length;
         }
@@ -153,16 +153,17 @@ function addToCart() {
 
   updateCartDetails();
 
-  showMenuRemoveButton(id, positionInCart);
+  showMenuRemoveButton(id);
 }
 
-function showMenuRemoveButton(id, positionInCart) {
+// Function to reveal the hiding remove button
+function showMenuRemoveButton(id) {
   $(".page-remove-button-" + id).show();
 }
 
+// Function to reveal
 function removeFromCartByMenu() {
   $(this).hide();
-  $(".my-cart-btn").hide().show();
 }
 
 // Updates the total number of items and total cost. Called by addToCart()
@@ -280,6 +281,14 @@ function removeFromCart() {
   cartPosition = cartPosition.slice(14, cartPosition.length);
   cart.splice(cartPosition, 1);
   updateCartDetails();
+  hideMenuRemoveButton();
+}
+
+function hideMenuRemoveButton() {
+  $(".page-remove-button").hide();
+  for (var i = 0; i < cart.length; i++) {
+    $(".page-remove-button-" + cart[i][4]).show();
+  }
 }
 
 // To decrement the quantity of an item that is already in the cart.
@@ -324,7 +333,7 @@ $(".my-cart-icon").click(onClickingMyCart); // Calling the function to respond t
 
 $(".my-cart-btn").click(addToCart); // Calling the function to respond to the add to cart click.
 
-$(".page-remove-button").click(removeFromCartByMenu); // Calling the function to hide the menu remove button
+$(".page-remove-button").click(removeFromCartByMenu); // Calling the function to hide the menu remove button.
 
 $(".remove-button").click(removeFromCart); // Calling the function to respond to the remove from cart click.
 
