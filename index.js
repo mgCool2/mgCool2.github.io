@@ -93,8 +93,9 @@ function displayMenuItems() {
           '</span></div><p class="item-details mr-auto">' +
           sections[i][0][j][1] +
           '</p></div><div class="col-md-6">' +
-          '<button class="btn btn-sm btn-outline-danger float-right page-remove-button remove-button page-remove-button-' +
+          '<button class="btn btn-sm btn-outline-danger float-right page-remove-button page-remove-button-' +
           sections[i][0][j][4] +
+          '" id="remove-button-' +
           '">Remove</button>' +
           '<button class="btn btn-sm btn-success my-cart-btn float-right" data-id="' +
           sections[i][0][j][4] +
@@ -122,6 +123,7 @@ function onClickingMyCart() {
 function addToCart() {
   var itemName = $(this).data("name");
   var itemInfo;
+  var thi = this;
 
   var id = $(this).data("id");
   var positionInCart;
@@ -159,11 +161,19 @@ function addToCart() {
 // Function to reveal the hiding remove button
 function showMenuRemoveButton(id) {
   $(".page-remove-button-" + id).show();
+  $(".page-remove-button-" + id).attr("id", id);
 }
 
 // Function to reveal
 function removeFromCartByMenu() {
   $(this).hide();
+  console.log(this.id);
+  for (var i = 0; i < cart.length; i++) {
+    if (this.id == cart[i][4]) {
+      cart.splice(i, 1);
+    }
+  }
+  updateCartDetails();
 }
 
 // Updates the total number of items and total cost. Called by addToCart()
