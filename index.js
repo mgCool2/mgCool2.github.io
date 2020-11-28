@@ -2,7 +2,9 @@ var itemID; // variable to assign sequential id's to all the elements in the men
 var cart = []; // array to store all the info of cart items.
 var totalCost; // To store the total cost of the items.
 var numberOfCartItems; // To store the number of items in the cart.
+var customerName; // To store the customer's name
 
+var targetPhoneNumber = "9741429166";
 var section1 = [
   ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg", 1],
   ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg", 2],
@@ -314,14 +316,38 @@ function decrementCartItem() {
 
 // To finalize the order and checkout
 function checkout() {
-  if (cart.length === 0 || myCart.length == null) {
+  if (cart.length === 0 || cart.length == null) {
     $("#my-cart-empty-message")
       .fadeOut(120)
       .fadeIn(120)
       .fadeOut(120)
       .fadeIn(120);
   } else {
-    alert(cart);
+    $(".menu-container").hide();
+    $(".cart-container").hide();
+    $(".checkout-container").show();
+  }
+}
+
+function placeOrder() {
+  customerName = $("#checkoutName").val();
+
+  if (customerName != null && customerName != "") {
+    var order = customerName + "\n\n";
+
+    for (var i = 0; i < cart.length; i++) {
+      order = order + cart[i][0] + "\t" + cart[i][2] + "\n";
+    }
+
+    var encodedOrder = encodeURI(order);
+    window.location.href =
+      "https://api.whatsapp.com/send/?phone=+91" +
+      targetPhoneNumber +
+      "&lang=en&text=" +
+      encodedOrder;
+  } else {
+    $("#checkoutName").fadeOut(120).fadeIn(120).fadeOut(120).fadeIn(120);
+    $("#nameNotFound").show();
   }
 }
 
@@ -338,6 +364,7 @@ displayMenuItems(); // To display the menu items
 
 $(".page-remove-button").hide(); // Hiding the remove buttons till the item is added to the cart.
 $(".cart-container").hide(); // Hiding the cart container till the button is pressed
+$(".checkout-container").hide(); // Hiding the checkout container
 
 $(".my-cart-icon").click(onClickingMyCart); // Calling the function to respond to the cart icon click
 
@@ -348,3 +375,5 @@ $(".page-remove-button").click(removeFromCartByMenu); // Calling the function to
 $(".remove-button").click(removeFromCart); // Calling the function to respond to the remove from cart click.
 
 $(".my-cart-checkout").click(checkout); // Calling the function to respond to the checkout button.
+
+$("#placeOrderButton").click(placeOrder);
