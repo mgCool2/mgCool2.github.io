@@ -336,7 +336,7 @@ function placeOrder() {
     var order = customerName + "\n\n";
 
     for (var i = 0; i < cart.length; i++) {
-      order = order + cart[i][0] + "\t X " + cart[i][2] + "\n";
+      order = order + cart[i][0] + "      " + cart[i][2] + "\n";
     }
 
     var encodedOrder = encodeURI(order);
