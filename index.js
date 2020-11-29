@@ -104,6 +104,8 @@ function displayMenuItems() {
           '" data-name="' +
           sections[i][0][j][0] +
           '" data-price="' +
+          '" id="add-to-cart-' +
+          sections[i][0][j][4] +
           '">Add to cart</button><span class="price float-right">Rs. ' +
           sections[i][0][j][2] +
           "/-</span></div></div></div>"
@@ -125,7 +127,7 @@ function onClickingMyCart() {
 function addToCart() {
   var itemName = $(this).data("name");
   var itemInfo;
-  var thi = this;
+  $(this).hide();
 
   var id = $(this).data("id");
   var positionInCart;
@@ -175,6 +177,7 @@ function removeFromCartByMenu() {
       cart.splice(i, 1);
     }
   }
+  $("#add-to-cart-" + this.id).show();
   updateCartDetails();
 }
 
@@ -323,17 +326,7 @@ function checkout() {
       .fadeOut(120)
       .fadeIn(120);
   } else {
-    $(".menu-container").hide();
-    $(".cart-container").hide();
-    $(".checkout-container").show();
-  }
-}
-
-function placeOrder() {
-  customerName = $("#checkoutName").val();
-
-  if (customerName != null && customerName != "") {
-    var order = customerName + "\n\n";
+    var order = "";
 
     for (var i = 0; i < cart.length; i++) {
       order = order + cart[i][0] + "      " + cart[i][2] + "\n";
@@ -345,10 +338,11 @@ function placeOrder() {
       targetPhoneNumber +
       "&lang=en&text=" +
       encodedOrder;
-  } else {
-    $("#checkoutName").fadeOut(120).fadeIn(120).fadeOut(120).fadeIn(120);
-    $("#nameNotFound").show();
   }
+}
+
+function removeOverlay() {
+  $(".overlay").hide();
 }
 
 // For the Offcanvas template
@@ -376,4 +370,4 @@ $(".remove-button").click(removeFromCart); // Calling the function to respond to
 
 $(".my-cart-checkout").click(checkout); // Calling the function to respond to the checkout button.
 
-$("#placeOrderButton").click(placeOrder);
+$("#overlayOkButton").click(removeOverlay);
