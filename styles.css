@@ -38,13 +38,14 @@ section {
   margin: 150px auto;
   max-width: 500px;
   border-radius: 0.3rem;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 3.5rem;
   background-color: white;
-  text-align: center;
 }
 
 #overlayOkButton {
   width: 70px;
+  margin-bottom: 2rem;
+  float: right;
 }
 
 .page-remove-button {
