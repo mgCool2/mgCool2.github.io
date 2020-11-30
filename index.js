@@ -117,6 +117,16 @@ function displayMenuItems() {
       itemID = itemID + 1;
     }
   }
+  $(document).on("click", 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $("html, body").animate(
+      {
+        scrollTop: $($.attr(this, "href")).offset().top - 110,
+      },
+      500
+    );
+  });
 }
 
 // Action performed when the cart icon is clicked.
