@@ -2,9 +2,8 @@ var itemID; // variable to assign sequential id's to all the elements in the men
 var cart = []; // array to store all the info of cart items.
 var totalCost; // To store the total cost of the items.
 var numberOfCartItems; // To store the number of items in the cart.
-var customerName; // To store the customer's name
 
-var targetPhoneNumber = "9741429166";
+var targetPhoneNumber = "9741429166"; // The phone number to whom the order must be placed.
 var section1 = [
   ["Item 1 Name", "Item 1 Description", 100, "./images/food.jpg", 1],
   ["Item 2 Name", "Item 2 Description", 200, "./images/food.jpg", 2],
@@ -56,6 +55,11 @@ var sections = [
   [section3, "Section 3 Name", "Section Description", "Section3ID"],
   [section4, "Section 4 Name", "Section Description", "Section4ID"],
 ];
+
+// Function to hide the overlay
+function removeOverlay() {
+  $(".overlay").hide();
+}
 
 // function to display all the items in the sections array.
 function displayMenuItems() {
@@ -166,6 +170,44 @@ function addToCart() {
 function showMenuRemoveButton(id) {
   $(".page-remove-button-" + id).show();
   $(".page-remove-button-" + id).attr("id", id);
+}
+
+// To increment the quantity of an item that is already in the cart.
+function incrementCartItem() {
+  var cartPosition = this.id;
+  cartPosition = cartPosition.slice(12, cartPosition.length);
+  cart[cartPosition][2] += 1;
+  updateCartDetails();
+}
+
+// To decrement the quantity of an item that is already in the cart.
+function decrementCartItem() {
+  var cartPosition = this.id;
+  cartPosition = cartPosition.slice(13, cartPosition.length);
+  cart[cartPosition][2] -= 1;
+  if (cart[cartPosition][2] === 0) {
+    cart.splice(cartPosition, 1);
+  }
+  updateCartDetails();
+}
+
+// To remove all items of the given type from the cart
+function removeFromCart() {
+  $("#add-to-cart-" + $(this).data("id")).show();
+
+  var cartPosition = this.id;
+  cartPosition = cartPosition.slice(14, cartPosition.length);
+  cart.splice(cartPosition, 1);
+  updateCartDetails();
+  hideMenuRemoveButton();
+}
+
+// Hiding the remove buttons for the items that are not in the cart
+function hideMenuRemoveButton() {
+  $(".page-remove-button").hide();
+  for (var i = 0; i < cart.length; i++) {
+    $(".page-remove-button-" + cart[i][4]).show();
+  }
 }
 
 // Function to reveal add to cart buttons
@@ -290,43 +332,6 @@ function addEventListeners() {
   $(".remove-button").click(removeFromCart);
 }
 
-// To increment the quantity of an item that is already in the cart.
-function incrementCartItem() {
-  var cartPosition = this.id;
-  cartPosition = cartPosition.slice(12, cartPosition.length);
-  cart[cartPosition][2] += 1;
-  updateCartDetails();
-}
-
-// To remove all items of the given type from the cart
-function removeFromCart() {
-  $("#add-to-cart-" + $(this).data("id")).show();
-
-  var cartPosition = this.id;
-  cartPosition = cartPosition.slice(14, cartPosition.length);
-  cart.splice(cartPosition, 1);
-  updateCartDetails();
-  hideMenuRemoveButton();
-}
-
-function hideMenuRemoveButton() {
-  $(".page-remove-button").hide();
-  for (var i = 0; i < cart.length; i++) {
-    $(".page-remove-button-" + cart[i][4]).show();
-  }
-}
-
-// To decrement the quantity of an item that is already in the cart.
-function decrementCartItem() {
-  var cartPosition = this.id;
-  cartPosition = cartPosition.slice(13, cartPosition.length);
-  cart[cartPosition][2] -= 1;
-  if (cart[cartPosition][2] === 0) {
-    cart.splice(cartPosition, 1);
-  }
-  updateCartDetails();
-}
-
 // To finalize the order and checkout
 function checkout() {
   if (cart.length === 0 || cart.length == null) {
@@ -351,10 +356,6 @@ function checkout() {
   }
 }
 
-function removeOverlay() {
-  $(".overlay").hide();
-}
-
 // For the Offcanvas template
 $(function () {
   "use strict";
@@ -365,6 +366,7 @@ $(function () {
 });
 
 displayMenuItems(); // To display the menu items
+updateCartDetails();
 
 $(".page-remove-button").hide(); // Hiding the remove buttons till the item is added to the cart.
 $(".cart-container").hide(); // Hiding the cart container till the button is pressed
@@ -380,4 +382,4 @@ $(".remove-button").click(removeFromCart); // Calling the function to respond to
 
 $(".my-cart-checkout").click(checkout); // Calling the function to respond to the checkout button.
 
-$("#overlayOkButton").click(removeOverlay);
+$("#overlayOkButton").click(removeOverlay); // Calling the function to remove the overlay

@@ -1,12 +1,22 @@
+/* Styling the notification icon displaying the number of items in the cart */
+.badge-notify {
+  color: white;
+  position: relative;
+  top: -14px;
+  right: 14px;
+}
+
+/* To style all the buttons on the page */
 .btn {
   margin: 0 0.125rem 0 0;
 }
 
-section {
-  max-width: 992px;
-  margin: 0 auto;
+/* To style the item description */
+.item-details {
+  margin: 0 0 0.2rem 0;
 }
 
+/* Styling the image for the item on the menu */
 .item-img {
   width: 32px;
   height: 32px;
@@ -14,14 +24,38 @@ section {
   margin-right: 0.25rem;
 }
 
-#my-cart-table {
-  margin: 0;
+/* To style the item name */
+.item-name {
+  font-weight: bold;
 }
 
+/* Styling the contents of the cart modal page */
+.modal-dialog {
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+  min-width: 17.75rem;
+  max-width: 31.25rem;
+}
+
+/* Styling for the add-to-cart buttons */
 .my-cart-btn {
   min-width: 90px;
 }
 
+/* Styling the cart modal page */
+#my-cart-modal {
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+/* To style the item quantity displayed in the cart */
+.my-product-quantity {
+  text-align: center;
+}
+
+/* Styling for the overlay  */
 .overlay {
   position: fixed;
   width: 100%;
@@ -34,6 +68,7 @@ section {
   z-index: 10000;
 }
 
+/* Styling for the overlay content */
 .overlay-dialog {
   margin: 150px auto;
   max-width: 500px;
@@ -42,72 +77,31 @@ section {
   background-color: white;
 }
 
+/* Styling for the button in the overlay dialog  */
 #overlayOkButton {
   width: 70px;
   margin-bottom: 2rem;
   float: right;
 }
 
+/* To style the remove button on the main page */
 .page-remove-button {
   min-width: 90px;
 }
 
-/* CUSTOMIZE: To style the item name */
-.item-name {
-  font-weight: bold;
-}
-
-/* CUSTOMIZE: To style the item description */
-.item-details {
-  margin: 0 0 0.2rem 0;
-}
-
-/* CUSTOMIZE: To style the price displayed in the menu */
+/* To style the price displayed in the menu */
 .price {
   margin: 0.5rem 1rem 0 0;
   font-weight: bold;
 }
 
-.badge-notify {
-  color: white;
-  position: relative;
-  top: -14px;
-  right: 14px;
-}
-
-#my-cart-modal {
-  display: block;
-  position: relative;
-  z-index: 10;
-}
-
-#checkout-modal {
-  display: block;
-  position: relative;
-  z-index: 10;
-}
-
-.modal-dialog {
+/* Styling each of the menu sections */
+section {
+  max-width: 992px;
   margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
-  min-width: 17.75rem;
-  max-width: 31.25rem;
 }
 
-.checkout-modal-body {
-  text-align: left;
-  padding: 1rem;
-  min-width: 15.75rem;
-  max-width: 31.25rem;
-}
-
-/* CUSTOMIZE: To style the item quantity displayed in the cart */
-.my-product-quantity {
-  text-align: center;
-}
-
-/* For the Offcanvas template */
+/*---------------------------------------- For the Offcanvas template ---------------------------------------------*/
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -218,6 +212,7 @@ body {
   }
 }
 
+/* Section target offset for the navbar */
 :target::before {
   content: "";
   display: block;
