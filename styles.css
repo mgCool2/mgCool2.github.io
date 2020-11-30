@@ -101,46 +101,22 @@ section {
   margin: 0 auto;
 }
 
-/*---------------------------------------- For the Offcanvas template ---------------------------------------------*/
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+/* Doubling the image size for medium and smaller width screens */
+@media (max-width: 768px) {
+  .item-img {
+    width: 64px;
+    height: 64px;
+    margin-right: 0.25rem;
+  }
 }
 
+/*---------------------------------------- For the Offcanvas template ---------------------------------------------*/
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-@media (max-width: 991.98px) {
-  .offcanvas-collapse {
-    position: fixed;
-    top: 56px; /* Height of navbar */
-    bottom: 0;
-    left: 100%;
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    overflow-y: auto;
-    visibility: hidden;
-    background-color: #343a40;
-    transition: visibility 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out,
-      -webkit-transform 0.3s ease-in-out;
-  }
-  .offcanvas-collapse.open {
-    visibility: visible;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
 }
 
 .nav-scroller {
@@ -178,36 +154,4 @@ body {
 .nav-underline .active {
   font-weight: 500;
   color: #343a40;
-}
-
-.text-white-50 {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.bg-purple {
-  background-color: #6f42c1;
-}
-
-.lh-100 {
-  line-height: 1;
-}
-.lh-125 {
-  line-height: 1.25;
-}
-.lh-150 {
-  line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .item-img {
-    width: 64px;
-    height: 64px;
-    margin-right: 0.25rem;
-  }
 }

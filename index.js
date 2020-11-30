@@ -117,6 +117,8 @@ function displayMenuItems() {
       itemID = itemID + 1;
     }
   }
+
+  // For smooth scrolling to the section links
   $(document).on("click", 'a[href^="#"]', function (event) {
     event.preventDefault();
 
