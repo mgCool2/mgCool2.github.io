@@ -264,6 +264,12 @@ function displayCartItems() {
           '">Remove</a></td>' +
           '</tr><hr style="border: 4px; max-width: 250px;">'
       );
+
+      if (cart[i][2] == 1) {
+        $("#minus-button-" + i).hide();
+      } else {
+        $("#minus-button-" + i).show();
+      }
     }
     $("#my-cart-table").append(
       "<tr>" +
