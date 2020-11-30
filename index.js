@@ -168,7 +168,7 @@ function showMenuRemoveButton(id) {
   $(".page-remove-button-" + id).attr("id", id);
 }
 
-// Function to reveal
+// Function to reveal add to cart buttons
 function removeFromCartByMenu() {
   $(this).hide();
   console.log(this.id);
@@ -259,6 +259,8 @@ function displayCartItems() {
           i +
           '"><a href="javascript:void(0);" class="btn btn-sm btn-outline-danger remove-button" id="remove-button-' +
           i +
+          '" data-id="' +
+          cart[i][4] +
           '">Remove</a></td>' +
           '</tr><hr style="border: 4px; max-width: 250px;">'
       );
@@ -292,6 +294,8 @@ function incrementCartItem() {
 
 // To remove all items of the given type from the cart
 function removeFromCart() {
+  $("#add-to-cart-" + $(this).data("id")).show();
+
   var cartPosition = this.id;
   cartPosition = cartPosition.slice(14, cartPosition.length);
   cart.splice(cartPosition, 1);
