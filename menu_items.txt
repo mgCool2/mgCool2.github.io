@@ -1,7 +1,7 @@
 ####
 SOUP
 ####
-["CREAM OF TOMATO SOUP","Italian style soup made with fresh tangy tomatoes, olive oil and garlic",100,"./images/food.jpg",3],
+["CREAM OF TOMATO SOUP","Italian style soup made with fresh tangy tomatoes, olive oil and garlic",100,"./images/food.jpg",1],
 ["SPICY VEG AND CORIANDER SOUP","Spicy mixed vegetables soup with green chilli, coriander and coconut cream",100,"./images/food.jpg",2],
 ["SWEET CORN VEG SOUP","Thick cream style American corn soup with mixed vegetables",100,"./images/food.jpg",3],
 ["CREAM OF SPINACH AND MUSHROOM SOUP","Spinach, cream and mushroom",100,"./images/food.jpg",4]
@@ -15,7 +15,7 @@ STARTERS
 ["FRENCH FRIES","",100,"./images/food.jpg",8],
 ["MANHATTAN FRENCH FRIES","Golden fried potato wedges with cheese and salsa",140,"./images/food.jpg",9],
 ["BOMBAY MASALA FRENCH FRIES","Golden fried potato wedges with Indian Bombay masala",130,"./images/food.jpg",10],
-["NACHOS VEG SUPREME","Nacho chips with veg mixture",140,"./images/food.jpg",13],
+["NACHOS VEG SUPREME","Nacho chips with veg mixture",140,"./images/food.jpg",11],
 ["MEXICAN NACHOS","Nachos served with beans, jalapenos and black olives",140,"./images/food.jpg",12],
 ["GOBI-65","Cauliﬂower marrinated in Indian spice and deep fried",190,"./images/food.jpg",13],
 ["MUSHROOM - 65","Mushroom marrinated in Indian spice and deep fried",210,"./images/food.jpg",14],
@@ -28,7 +28,7 @@ TANDOOR STARTERS
 ["VEGETABLE SEEKH KEBAB","Minced vegetable blended with exotic herbs and barbequed crisp",220,"./images/food.jpg",18],
 ["TANDOORI HARI GOBI","Cauliﬂower marinated with tandoori masala and cream",200,"./images/food.jpg",19],
 ["ACHARI PANEER TIKKA","Malai Paneer marinated with a special blend of achari masala",220,"./images/food.jpg",20],
-["GARLIC CHEESE PANEER TIKKA","Paneer marinated with cheese and garlic",230,"./images/food.jpg",23],
+["GARLIC CHEESE PANEER TIKKA","Paneer marinated with cheese and garlic",230,"./images/food.jpg",21],
 ["HARIYALI PANEER TIKKA","Paneer marinated with mint & chutney",220,"./images/food.jpg",22],
 ["MADRASI MUSHROOM","Mushroom, stuﬀed paneer & cheese",220,"./images/food.jpg",23],
 ["DINGRI ACHARI ADRAKI","Mushroom, stuﬀed paneer, achari masala & cheese",230,"./images/food.jpg",24],
